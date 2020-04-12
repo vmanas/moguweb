@@ -3,11 +3,13 @@
       <img src="../assets/img/other/logo.png" alt="logo" class="logo">
       <a href="javascript:;" :class="['shop-btn',{'icon-shop':!active,'icon-add':active}]"></a>
         <mush-room></mush-room>
+      <div class="test1">蘑菇街</div>
   </div>
 </template>
 
 <script>
 import MushRoom from './components/rlmg'
+import '../common/font/font.css'
 export default {
   name: 'Home',
   components:{MushRoom},
@@ -36,6 +38,10 @@ export default {
     width: 40px;
     height: 40px;
     border-radius: 20px;
+}
+.test1{
+    font-size: 24px;
+    font-family: FYZYT;
 }
 
 </style>
