@@ -14,6 +14,7 @@ import MushRoom from './components/rlmg';
 import Mgtkc from './components/mgtkc';
 import Cdtkc from './components/cdtkc';
 import Bzpj from './components/bzpj';
+import '../common/font/font.css'
 export default {
   name: 'Home',
   components:{MushRoom,Mgtkc,Cdtkc,Bzpj},
@@ -43,6 +44,10 @@ export default {
     width: 40px;
     height: 40px;
     border-radius: 20px;
+}
+.test1{
+    font-size: 24px;
+    font-family: FYZYT;
 }
 
 </style>
