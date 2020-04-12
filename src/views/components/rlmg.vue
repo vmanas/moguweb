@@ -49,8 +49,8 @@ export default {
     };
   },
   mounted() {
-    const width = document.documentElement.clientWidth;
-    const height = document.documentElement.clientHeight;
+    const width = document.getElementsByTagName("body")[0].clientWidth;
+    const height = document.getElementsByTagName("body")[0].clientHeight;
     bgMush.w = width;
     bgMush.h = height;
     this.lottie = lottie.loadAnimation({
@@ -80,7 +80,7 @@ export default {
     height: 400px;
   }
   .panel-active p {
-    font-size: 24px;
+    font-size: 0.125rem;
     color: #fff;
   }
   p {
@@ -88,7 +88,7 @@ export default {
     a {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.75);
-      font-size: 28px;
+      font-size: 0.145rem;
     }
   }
 }
@@ -99,6 +99,7 @@ export default {
   background-image: url("../../assets/img/other/mg.png");
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 2.76rem 4.45rem;
 }
 .right {
   width: 33.33%;

@@ -28,8 +28,8 @@ export default {
 <style lang="less">
 .logo{
     position: fixed;
-    top: 34px;
-    left: 164px;
+    top: 0.177rem;
+    left: 0.854rem;
 }
 
 .home,.lottie-box{
@@ -38,16 +38,17 @@ export default {
 
 .shop-btn{
     position: fixed;
-    bottom: 130px;
-    right: 130px;
+    bottom: 0.67rem;
+    right: 0.67rem;
     display: block;
-    width: 110px;
-    height: 110px;
-    border-radius:110px;
+    width: 0.57rem;
+    height: 0.57rem;
+    border-radius:0.57rem;
 }
 .test1{
-    font-size: 24px;
+    font-size: 0.06rem;
     font-family: FYZYT;
 }
+
 
 </style>

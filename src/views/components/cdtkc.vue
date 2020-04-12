@@ -14,8 +14,8 @@ export default {
     };
   },
   mounted() {
-    const width = document.documentElement.clientWidth;
-    const height = document.documentElement.clientHeight;
+    const width = document.getElementsByTagName('body')[0].clientWidth;
+    const height = document.getElementsByTagName('body')[0].clientHeight;
     bgCloud.w = width;
     bgCloud.h = height;
     this.lottie = lottie.loadAnimation({
