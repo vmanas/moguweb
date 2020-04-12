@@ -4,6 +4,7 @@
     </div>
 </template>
 <script >
+// 日落蘑菇
 import lottie from 'lottie-web';
 // eslint-disable-next-line no-unused-vars
 import {bgMush} from '../../../static/lottie.js';
@@ -13,8 +14,6 @@ export default {
         return{
             lottie:{},
         }
-    },
-    methods:{
     },
     mounted(){
         this.lottie = lottie.loadAnimation({
