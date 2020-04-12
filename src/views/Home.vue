@@ -1,17 +1,40 @@
 <template>
   <div class="home">
-    <HelloWorld/>
+      <img src="../assets/logo.png" alt="logo">
+      
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import lottie from 'lottie-web';
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+    data(){
+        return{
+            lottie:{},  
+        }
+    },
+    methods:{
+        suspendFun:function(){
+            this.lottie.pause();
+        },
+        startFun:function(){
+            this.lottie.play()
+        }
+    },
+    mounted(){
+        this.lottie = lottie.loadAnimation({
+            container: document.getElementById('lottie_box'),
+            renderer: 'svg',
+            loop: true,
+            path: 'https://labs.nearpod.com/bodymovin/demo/markus/halloween/markus.json'
+        })
+    }
 }
 </script>
+<style lang="less">
+.home{
+  height: 100%;
+  background: #f66;
+}
+</style>
