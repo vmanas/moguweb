@@ -1,40 +1,41 @@
 <template>
   <div class="home">
-      <img src="../assets/logo.png" alt="logo">
-      
+      <img src="../assets/img/other/logo.png" alt="logo" class="logo">
+      <a href="javascript:;" :class="['shop-btn',{'icon-shop':!active,'icon-add':active}]"></a>
+        <mush-room></mush-room>
   </div>
 </template>
 
 <script>
-import lottie from 'lottie-web';
+import MushRoom from './components/rlmg'
 export default {
   name: 'Home',
+  components:{MushRoom},
     data(){
         return{
-            lottie:{},  
+            active:false  
         }
     },
-    methods:{
-        suspendFun:function(){
-            this.lottie.pause();
-        },
-        startFun:function(){
-            this.lottie.play()
-        }
-    },
-    mounted(){
-        this.lottie = lottie.loadAnimation({
-            container: document.getElementById('lottie_box'),
-            renderer: 'svg',
-            loop: true,
-            path: 'https://labs.nearpod.com/bodymovin/demo/markus/halloween/markus.json'
-        })
-    }
 }
 </script>
 <style lang="less">
-.home{
-  height: 100%;
-  background: #f66;
+.logo{
+    position: absolute;
+    top: 20px;
+    left: 100px;
 }
+.home,.lottie-box{
+  height: 100%;
+}
+
+.shop-btn{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
 </style>

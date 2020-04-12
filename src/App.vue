@@ -20,4 +20,7 @@ html,body,#app{
   text-align: center;
   color: #2c3e50;
 }
+.icon-shop{
+  background: center center url('./assets/img/icon/icon-shop.png') no-repeat;
+}
 </style>
