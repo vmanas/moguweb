@@ -30,6 +30,7 @@ export default {
     position: fixed;
     top: 0.177rem;
     left: 0.854rem;
+    z-index:9;
 }
 
 .home,.lottie-box{
@@ -44,6 +45,14 @@ export default {
     width: 0.57rem;
     height: 0.57rem;
     border-radius:0.57rem;
+    z-index: 9;
+}
+.btn{
+    display: block;
+    width: 0.57rem;
+    height: 0.57rem;
+    border-radius:0.57rem;
+    z-index: 9;
 }
 .test1{
     font-size: 0.06rem;
