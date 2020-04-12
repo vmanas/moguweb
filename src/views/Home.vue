@@ -27,9 +27,9 @@ export default {
 </script>
 <style lang="less">
 .logo{
-    position: absolute;
-    top: 20px;
-    left: 100px;
+    position: fixed;
+    top: 34px;
+    left: 164px;
 }
 
 .home,.lottie-box{
@@ -37,13 +37,13 @@ export default {
 }
 
 .shop-btn{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    position: fixed;
+    bottom: 130px;
+    right: 130px;
     display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    width: 110px;
+    height: 110px;
+    border-radius:110px;
 }
 .test1{
     font-size: 24px;

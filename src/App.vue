@@ -20,5 +20,9 @@ html,body,#app{
   text-align: center;
   color: #2c3e50;
 }
+img{
+  border: none;
+  outline: none;
+}
 @import url('./assets/css/icon.less');
 </style>
