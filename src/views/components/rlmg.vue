@@ -81,7 +81,7 @@ export default {
   width: 33.33%;
   height: 100%;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   .menu {
     position: absolute;
     top: 0;
@@ -91,6 +91,7 @@ export default {
     height: 2.08rem;
   }
   .panel-active {
+    margin-top: 0.13rem;
     p {
       font-size: 0.156rem;
       color: #fff;

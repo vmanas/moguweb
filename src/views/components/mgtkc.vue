@@ -1,15 +1,15 @@
 <template>
   <div class="lottie-box" id="mgtkc">
-     <div class="left">
+    <div class="left">
       <div class="menu">
-        <div class="panel-active">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" />
-          <p class="panel-active-border">粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
         <p>
-          <a href="#mgtkc">充电太空舱</a>
+          <a href="#mushroom">日落蘑菇</a>
         </p>
+        <div class="panel-active">
+          <p>蘑菇充电宝</p>
+          <img src="../../assets/img/other/mgtkc.png" alt="蘑菇太空舱" />
+          <p class="panel-active-border">有我，就一定有电</p>
+        </div>
         <p>
           <a href="#cdtkc">App</a>
         </p>
@@ -23,24 +23,17 @@
       <div class="nav-bar">
         <div class="nav-btn">
           <div class="text-panel">
-            <p>通体透明硅胶包裹表面磨砂触感</p>
-            <p>全机身密闭防水，使用后放心冲洗</p>
+            <p>无线充电盒</p>
+            <p>使用后将蘑菇放回太空舱自动开始充电</p>
           </div>
-          <a href="javascript:;" class="btn icon icon-mg-1"></a>
+          <a href="javascript:;" class="btn icon icon-tkc-1"></a>
         </div>
         <div class="nav-btn">
           <div class="text-panel">
-            <p>掌心尺寸轻松调节强度</p>
-            <p>可连接PinkPunch App邀请密友隔空互动</p>
+            <p>蘑菇充电宝</p>
+            <p>外出时太空舱内置电池可为蘑菇补足电量</p>
           </div>
-          <a href="javascript:;" class="btn icon icon-mg-2"></a>
-        </div>
-        <div class="nav-btn">
-          <div class="text-panel">
-            <p>电量可以支撑使用1小时</p>
-            <p>放回随身配备的太空舱随时随地补充电量</p>
-          </div>
-          <a href="javascript:;" class="btn icon icon-mg-3"></a>
+          <a href="javascript:;" class="btn icon icon-tkc-2"></a>
         </div>
       </div>
     </div>
@@ -73,8 +66,38 @@ export default {
   }
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 #mgtkc {
   background: #ffcc99;
+}
+.content{
+  background-image: url('../../assets/img/other/tkc.png');
+  background-size: 4.06rem 3.8rem;
+}
+.nav-btn {
+  &:nth-child(1):hover {
+    .text-panel {
+      display: block;
+    }
+    .icon-tkc-1{
+      width: 0.98rem;
+      height: 0.98rem;
+      margin-top: 0;
+      top: 0;
+      background-image: url("../../assets/img/icon/tkc-nav-1.png");
+    }
+  }
+  &:nth-child(2):hover {
+    .text-panel {
+      display: block;
+    }
+    .icon-tkc-2 {
+      width: 0.98rem;
+      height: 0.98rem;
+      margin-top: 0;
+      top: 0;
+      background-image: url("../../assets/img/icon/tkc-nav-2.png");
+    }
+  }
 }
 </style>
