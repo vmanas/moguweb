@@ -1,0 +1,154 @@
+.left {
+    width: 33.33%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    .menu {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      margin-left: 0.46rem;
+      height: 2.08rem;
+    }
+    .panel-active {
+      p {
+        font-size: 0.156rem;
+        color: #fff;
+        cursor: default;
+        &:nth-child(1) {
+          font-size: 0.125rem;
+          letter-spacing: 0.146rem;
+        }
+      }
+      .panel-active-border {
+        border-top: 0.01rem solid #fff;
+        padding-top: 0.156rem;
+      }
+      img {
+        width: 2.56rem;
+        margin-left: -0.13rem;
+      }
+    }
+    p {
+      text-align: left;
+      font-family: "FYZYT";
+  
+      a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.145rem;
+        margin-top: 0.13rem;
+        display: inline-block;
+        font-weight: 600;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../../assets/img/other/mg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 2.76rem 4.45rem;
+    z-index: 2;
+  }
+  .right {
+    width: 0.78rem;
+    height: 100%;
+    position: absolute;
+    right: 0.67rem;
+    display: table;
+    z-index: 8;
+    .nav-bar {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  
+  .nav-btn {
+    position: relative;
+    cursor: pointer;
+    width: 0.98rem;
+    height: 0.98rem;
+    &:before {
+      content: ".";
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+    a {
+      width: 0.57rem;
+      height: 0.57rem;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      margin-top: -0.265rem;
+    }
+  
+    .text-panel {
+      position: absolute;
+      right: 1.11rem;
+      top: 0.3rem;
+      display: none;
+      p {
+        color: #fff;
+        text-align: right;
+        font-family: "FYZYT";
+        white-space: nowrap;
+        font-size: 0.083rem;
+        &:nth-child(1) {
+          font-weight: 600;
+          font-size: 0.093rem;
+          margin-bottom: 0.04rem;
+        }
+      }
+    }
+  }
+  .nav-btn {
+    &:nth-child(1):hover {
+      .text-panel {
+        display: block;
+      }
+      .icon-mg-1 {
+        width: 0.98rem;
+        height: 0.98rem;
+        margin-top: 0;
+        top: 0;
+        background-image: url("../../assets/img/icon/mg-nav-1.png");
+      }
+    }
+    &:nth-child(2):hover {
+      .text-panel {
+        display: block;
+      }
+      .icon-mg-2 {
+        width: 0.98rem;
+        height: 0.98rem;
+        margin-top: 0;
+        top: 0;
+        background-image: url("../../assets/img/icon/mg-nav-2.png");
+      }
+    }
+    &:nth-child(3):hover {
+      .text-panel {
+        display: block;
+      }
+      .icon-mg-3 {
+        width: 0.98rem;
+        height: 0.98rem;
+        margin-top: 0;
+        top: 0;
+        background-image: url("../../assets/img/icon/mg-nav-3.png");
+      }
+    }
+  }
+  
+  .img-text {
+    background-image: url("../../assets/img/other/rlmg.png");
+    background-repeat: no-repeat;
+  }

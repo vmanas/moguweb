@@ -1,7 +1,7 @@
 <template>
   <div class="home">
       <img src="../assets/img/other/logo.png" alt="logo" class="logo">
-      <a href="javascript:;" :class="['shop-btn','icon',{'icon-shop':!active,'icon-add':active}]"></a>
+      <a href="javascript:;" class="shop-btn icon icon-shop"></a>
       <mush-room></mush-room>
       <mgtkc></mgtkc>
       <cdtkc></cdtkc>
@@ -17,12 +17,7 @@ import Bzpj from './components/bzpj';
 import '../common/font/font.css'
 export default {
   name: 'Home',
-  components:{MushRoom,Mgtkc,Cdtkc,Bzpj},
-    data(){
-        return{
-            active:false  
-        }
-    },
+  components:{MushRoom,Mgtkc,Cdtkc,Bzpj}
 }
 </script>
 <style lang="less">
@@ -46,6 +41,9 @@ export default {
     height: 0.57rem;
     border-radius:0.57rem;
     z-index: 9;
+    &:hover{
+        background-image: url('../assets/img/icon/icon-add.png');
+    }
 }
 .btn{
     display: block;
