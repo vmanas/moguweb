@@ -49,8 +49,14 @@ export default {
   }
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 #bzpj {
   background: #f99;
+}
+.left .panel-active p{
+  margin-top: 0.05rem;
+  &.panel-active-border{
+    margin-top: 0;
+  }
 }
 </style>

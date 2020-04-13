@@ -138,7 +138,7 @@ export default {
   z-index: 2;
 }
 .right {
-  width: 0.78rem;
+  width: 0.57rem;
   height: 100%;
   position: absolute;
   right: 0.67rem;
@@ -153,8 +153,8 @@ export default {
 .nav-btn {
   position: relative;
   cursor: pointer;
-  width: 0.98rem;
-  height: 0.98rem;
+  width: 0.57rem;
+  height: 0.57rem;
   &:before {
     content: ".";
     display: block;
@@ -165,15 +165,12 @@ export default {
     width: 0.57rem;
     height: 0.57rem;
     margin: 0 auto;
-    position: relative;
-    top: 50%;
-    margin-top: -0.265rem;
   }
 
   .text-panel {
     position: absolute;
-    right: 1.11rem;
-    top: 0.3rem;
+    right: 0.8rem;
+    top: 0.2rem;
     display: none;
     p {
       color: #fff;
@@ -190,6 +187,7 @@ export default {
   }
 }
 .nav-btn {
+  margin-bottom: 0.1rem;
   &:nth-child(1):hover {
     .text-panel {
       display: block;
@@ -197,9 +195,10 @@ export default {
     .icon-mg-1 {
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
+      margin-top: -0.205rem;
+      margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/mg-nav-1.png");
+      background-size: 0.98rem 0.98rem;
     }
   }
   &:nth-child(2):hover {
@@ -209,9 +208,10 @@ export default {
     .icon-mg-2 {
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
+      margin-top: -0.205rem;
+      margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/mg-nav-2.png");
+      background-size: 0.98rem 0.98rem;
     }
   }
   &:nth-child(3):hover {
@@ -221,9 +221,10 @@ export default {
     .icon-mg-3 {
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
+      margin-top: -0.205rem;
+      margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/mg-nav-3.png");
+      background-size: 0.98rem 0.98rem;
     }
   }
 }

@@ -82,8 +82,8 @@ export default {
     .icon-tkc-1{
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
+      margin-top: -0.205rem;
+      margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/tkc-nav-1.png");
     }
   }
@@ -94,8 +94,8 @@ export default {
     .icon-tkc-2 {
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
+      margin-top: -0.205rem;
+      margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/tkc-nav-2.png");
     }
   }

@@ -9,7 +9,6 @@
           <a href="#mgtkc">充电太空舱</a>
         </p>
         <div class="panel-active">
-          <!-- <p>APP</p> -->
           <img src="../../assets/img/other/app.png" alt="蘑菇太空舱" />
           <p class="panel-active-border">呼叫，连接，闭上眼</p>
         </div>
@@ -23,17 +22,24 @@
       <div class="nav-bar">
         <div class="nav-btn">
           <div class="text-panel">
-            <p>无线充电盒</p>
-            <p>使用后将蘑菇放回太空舱自动开始充电</p>
+            <p>5档波形切换得心应手</p>
+            <p>一键连接蓝牙，单手调节得心应手</p>
           </div>
-          <a href="javascript:;" class="btn icon icon-tkc-1"></a>
+          <a href="javascript:;" class="btn icon icon-cdtkc-1"></a>
         </div>
         <div class="nav-btn">
           <div class="text-panel">
-            <p>蘑菇充电宝</p>
-            <p>外出时太空舱内置电池可为蘑菇补足电量</p>
+            <p>邀请伙伴远程互动</p>
+            <p>与伙伴一起探索远程游戏体验互动乐趣</p>
           </div>
-          <a href="javascript:;" class="btn icon icon-tkc-2"></a>
+          <a href="javascript:;" class="btn icon icon-cdtkc-2"></a>
+        </div>
+         <div class="nav-btn">
+          <div class="text-panel">
+            <p>邀听见对方声音</p>
+            <p>远程互动中可进行语音和文字聊天</p>
+          </div>
+          <a href="javascript:;" class="btn icon icon-cdtkc-3"></a>
         </div>
       </div>
     </div>
@@ -84,24 +90,36 @@ export default {
     .text-panel {
       display: block;
     }
-    .icon-tkc-1{
+    .icon-cdtkc-1{
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
-      background-image: url("../../assets/img/icon/tkc-nav-1.png");
+      margin-top: -0.205rem;
+      margin-left: -0.205rem;
+      background-image: url("../../assets/img/icon/cdtkc-nav-1.png");
     }
   }
   &:nth-child(2):hover {
     .text-panel {
       display: block;
     }
-    .icon-tkc-2 {
+    .icon-cdtkc-2 {
       width: 0.98rem;
       height: 0.98rem;
-      margin-top: 0;
-      top: 0;
-      background-image: url("../../assets/img/icon/tkc-nav-2.png");
+       margin-top: -0.205rem;
+      margin-left: -0.205rem;
+      background-image: url("../../assets/img/icon/cdtkc-nav-2.png");
+    }
+  }
+  &:nth-child(3):hover {
+    .text-panel {
+      display: block;
+    }
+    .icon-cdtkc-3 {
+      width: 0.98rem;
+      height: 0.98rem;
+       margin-top: -0.205rem;
+      margin-left: -0.205rem;
+      background-image: url("../../assets/img/icon/cdtkc-nav-3.png");
     }
   }
 }
