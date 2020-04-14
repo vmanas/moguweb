@@ -8,7 +8,8 @@
         <div class="panel-active">
           <p>蘑菇充电宝</p>
           <img src="../../assets/img/other/mgtkc.png" alt="蘑菇太空舱" />
-          <p class="panel-active-border">有我，就一定有电</p>
+          <p class="panel-active-border"></p>
+          <p >有我，就一定有电</p>
         </div>
         <p>
           <a href="#cdtkc">App</a>

@@ -10,7 +10,8 @@
         </p>
         <div class="panel-active">
           <img src="../../assets/img/other/app.png" alt="蘑菇太空舱" />
-          <p class="panel-active-border">呼叫，连接，闭上眼</p>
+          <p class="panel-active-border"></p>
+          <p>呼叫，连接，闭上眼</p>
         </div>
         <p>
           <a href="#bzpj">包装与配件</a>

@@ -14,7 +14,8 @@
         <div class="panel-active">
           
           <img src="../../assets/img/other/bzypj.png" alt="包装配件" />
-          <p class="panel-active-border">太空舱&nbsp;充电线</p>
+          <p class="panel-active-border"></p>
+          <p >太空舱&nbsp;充电线</p>
           <p >PinkPunch&nbsp;纪念徽章</p>
         </div>
        

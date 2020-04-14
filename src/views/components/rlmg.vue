@@ -5,7 +5,8 @@
         <div class="panel-active">
           <p>跳蛋玩具</p>
           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" />
-          <p class="panel-active-border">粉嫩剔透，柔软外表内含充沛能量</p>
+          <p class="panel-active-border"></p>
+          <p >粉嫩剔透，柔软外表内含充沛能量</p>
         </div>
         <p>
           <a href="#mgtkc">充电太空舱</a>
@@ -78,7 +79,7 @@ export default {
   background: #cc6677;
 }
 .left {
-  width: 33.33%;
+  width: 2.39rem;
   height: 100%;
   position: absolute;
   z-index: 3;
@@ -88,7 +89,7 @@ export default {
     bottom: 0;
     margin: auto;
     margin-left: 0.46rem;
-    height: 2.08rem;
+    height: 2.7rem;
   }
   .panel-active {
     margin-top: 0.13rem;
@@ -102,6 +103,8 @@ export default {
       }
     }
     .panel-active-border {
+      width: 2.3rem;
+      height: 0;
       border-top: 0.01rem solid #fff;
       padding-top: 0.156rem;
     }
