@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
-
 <style>
-*{
+* {
   margin: 0;
   padding: 0;
 }
-html,body,#app{
+html,
+body,
+#app {
   width: 100%;
   height: 100%;
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -21,9 +22,9 @@ html,body,#app{
   text-align: center;
   color: #2c3e50;
 }
-img{
+img {
   border: none;
   outline: none;
 }
-@import url('./assets/css/icon.less');
+@import url("./assets/css/icon.less");
 </style>

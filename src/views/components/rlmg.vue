@@ -71,6 +71,15 @@ export default {
       autoplay: true,
       animationData: bgMush
     });
+    let list = document.querySelectorAll('.text-panel p');
+    let len = list.length;
+    for(let i = 0; i < len; i++){
+      list[i].style.transform = `scale(${window.fontScale})`
+    }
+    // .forEach(item=>{
+    //   item.style.transform = `scale(${window.fontScale})`
+
+    // })
   }
 };
 </script>
@@ -180,11 +189,11 @@ export default {
       text-align: right;
       font-family: "FYZYT";
       white-space: nowrap;
-      font-size: 0.083rem;
+      font-size: 16px;
+      transform-origin: right top;
       &:nth-child(1) {
         font-weight: 600;
-        font-size: 0.093rem;
-        margin-bottom: 0.04rem;
+        font-size: 18px;
       }
     }
   }
