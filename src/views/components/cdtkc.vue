@@ -3,7 +3,7 @@
    
     <div class="content"></div>
     <div class="right">
-      <div class="nav-bar">
+      <div class="nav-bar" @mouseleave="()=>{this.activeIndex=-1}">
         <div class="nav-btn" @mouseenter="handleEnter(0)" :class="{'zoomIn': activeIndex == 0}">
           <div class="text-panel">
             <p>5档波形切换得心应手</p>

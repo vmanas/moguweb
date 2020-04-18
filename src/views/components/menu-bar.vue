@@ -1,6 +1,9 @@
 <template>
   <div class="left">
-    <div class="menu">
+    <div
+      class="menu"
+      @mouseleave="()=>{this.activeIndex = this.currentIndex; this.hoverIndex = this.currentIndex}"
+    >
       <div class="menu-item" @mouseenter="handleMouse(0)">
         <p
           :class="['title-hide',{'title':activeIndex!=0 || hoverIndex !=0 || (activeIndex == 0 && hoverIndex!=0)}]"
@@ -18,42 +21,41 @@
       <div class="menu-item" @mouseenter="handleMouse(1)">
         <p
           :class="['title-hide',{'title':activeIndex!=1 || hoverIndex !=1 || (activeIndex == 1 && hoverIndex!=1)}]"
-        >日落蘑菇</p>
+        >充电太空舱</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 1 && hoverIndex == 1,'panel-hover':hoverIndex == 1 && activeIndex !=1}]"
         >
-          <p class="text-space">跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick(1)" />
+          <p class="text-space">蘑菇充电宝</p>
+          <img src="../../assets/img/other/mgtkc.png" alt="蘑菇太空舱" @click="handleClick(1)" />
           <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
+          <p>有我，就一定有电</p>
         </div>
       </div>
 
       <div class="menu-item" @mouseenter="handleMouse(2)">
         <p
           :class="['title-hide',{'title':activeIndex!=2 || hoverIndex !=2 || (activeIndex == 2 && hoverIndex!=2)}]"
-        >日落蘑菇</p>
+        >APP</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 2 && hoverIndex == 2,'panel-hover':hoverIndex == 2 && activeIndex !=2}]"
         >
-          <p class="text-space">跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick(2)" />
+          <img src="../../assets/img/other/app.png" alt="app" @click="handleClick(2)" />
           <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
+          <p>呼叫，链接，闭上眼</p>
         </div>
       </div>
 
       <div class="menu-item" @mouseenter="handleMouse(3)">
         <p
           :class="['title-hide',{'title':activeIndex!=3 || hoverIndex !=3 || (activeIndex == 3 && hoverIndex!=3)}]"
-        >日落蘑菇</p>
+        >包装与配件</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 3 && hoverIndex == 3,'panel-hover':hoverIndex == 3 && activeIndex !=3}]"
         >
-          <p class="text-space">跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick(3)" />
+          <img src="../../assets/img/other/bzypj.png" alt="配件" @click="handleClick(3)" />
           <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
+          <p>太空舱&nbsp;充电线</p>
+          <p>PinkPunch&nbsp;纪念徽章</p>
         </div>
       </div>
     </div>
@@ -68,17 +70,20 @@ export default {
   data() {
     return {
       activeIndex: 0,
-      hoverIndex: 0
+      hoverIndex: 0,
+      hover: false
     };
   },
   watch: {
     currentIndex(val) {
       this.activeIndex = val;
+      this.hoverIndex = val;
       console.log(this.activeIndex);
     }
   },
   methods: {
     handleMouse(val) {
+      this.hover = true;
       this.hoverIndex = val;
     },
     handleClick(val) {
@@ -101,7 +106,7 @@ export default {
     bottom: 0;
     margin: auto;
     margin-left: 0.46rem;
-    height: 2.7rem;
+    height: 2.4rem;
     p {
       text-align: left;
       font-family: "FYZYT";
@@ -125,17 +130,16 @@ export default {
       display: block;
       -webkit-animation-name: fadeIn;
       animation-name: fadeIn;
-
-      margin-top: 0.13rem;
       p.text-space {
         font-size: 0.125rem;
         letter-spacing: 0.146rem;
       }
       .panel-active-border {
-        width: 2.3rem;
+        width: 2.32rem;
         height: 0;
         border-top: 0.01rem solid #fff;
         padding-top: 0.156rem;
+        margin-top: -0.04rem;
       }
     }
     &.panel-hover {
@@ -150,11 +154,28 @@ export default {
 
   .title-hide {
     display: none;
+    opacity: 0.5;
+    margin-top: 0.16rem;
+    font-weight: 600;
     &.title {
       display: block;
     }
   }
-  .menu-item {
+  .menu .menu-item:nth-child(2) .panel-active {
+   margin-top: 0.13rem;
   }
+  .menu .menu-item:nth-child(3) .panel {
+    img {
+      width: 1.6rem;
+    }
+    .panel-active-border {
+      width: 1.42rem;
+    }
+  }
+  .menu .menu-item:nth-child(4) .panel-active{
+    p:last-child{
+      margin-top: 0.06rem;
+    }
+  } 
 }
 </style>

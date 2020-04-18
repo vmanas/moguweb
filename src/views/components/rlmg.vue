@@ -2,7 +2,7 @@
   <div class="lottie-box" id="mushroom">
     <div class="content"></div>
     <div class="right">
-      <div class="nav-bar">
+      <div class="nav-bar" @mouseleave="()=>{this.activeIndex=-1}">
         <div class="nav-btn" @mouseenter="handleEnter(0)" :class="{'zoomIn': activeIndex == 0}">
           <div class="text-panel">
             <p>通体透明硅胶包裹表面磨砂触感</p>
