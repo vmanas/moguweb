@@ -1,41 +1,24 @@
 <template>
   <div class="lottie-box" id="cdtkc">
-    <div class="left">
-      <div class="menu">
-        <p>
-          <a href="#mushroom">日落蘑菇</a>
-        </p>
-        <p>
-          <a href="#mgtkc">充电太空舱</a>
-        </p>
-        <div class="panel-active">
-          <img src="../../assets/img/other/app.png" alt="蘑菇太空舱" />
-          <p class="panel-active-border"></p>
-          <p>呼叫，连接，闭上眼</p>
-        </div>
-        <p>
-          <a href="#bzpj">包装与配件</a>
-        </p>
-      </div>
-    </div>
+   
     <div class="content"></div>
     <div class="right">
       <div class="nav-bar">
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(0)" :class="{'zoomIn': activeIndex == 0}">
           <div class="text-panel">
             <p>5档波形切换得心应手</p>
             <p>一键连接蓝牙，单手调节得心应手</p>
           </div>
           <a href="javascript:;" class="btn icon icon-cdtkc-1"></a>
         </div>
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(1)" :class="{'zoomIn': activeIndex == 1}">
           <div class="text-panel">
             <p>邀请伙伴远程互动</p>
             <p>与伙伴一起探索远程游戏体验互动乐趣</p>
           </div>
           <a href="javascript:;" class="btn icon icon-cdtkc-2"></a>
         </div>
-         <div class="nav-btn">
+         <div class="nav-btn" @mouseenter="handleEnter(2)" :class="{'zoomIn': activeIndex == 2}">
           <div class="text-panel">
             <p>邀听见对方声音</p>
             <p>远程互动中可进行语音和文字聊天</p>
@@ -55,7 +38,8 @@ export default {
   name: "cdtkc",
   data() {
     return {
-      lottie: {}
+      lottie: {},
+      activeIndex:-1
     };
   },
   mounted() {
@@ -70,6 +54,12 @@ export default {
       autoplay: true,
       animationData: bgCloud
     });
+  },
+  methods:{
+    handleEnter(val){
+      this.activeIndex = -1;
+      this.activeIndex = val;
+    }
   }
 };
 </script>
@@ -87,7 +77,7 @@ export default {
   background-size: 1.79rem 3.64rem;
 }
 .nav-btn {
-  &:nth-child(1):hover {
+  &:nth-child(1).zoomIn {
     .text-panel {
       display: block;
     }
@@ -99,7 +89,7 @@ export default {
       background-image: url("../../assets/img/icon/cdtkc-nav-1.png");
     }
   }
-  &:nth-child(2):hover {
+  &:nth-child(2).zoomIn {
     .text-panel {
       display: block;
     }
@@ -111,7 +101,7 @@ export default {
       background-image: url("../../assets/img/icon/cdtkc-nav-2.png");
     }
   }
-  &:nth-child(3):hover {
+  &:nth-child(3).zoomIn {
     .text-panel {
       display: block;
     }

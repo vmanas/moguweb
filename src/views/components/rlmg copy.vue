@@ -1,45 +1,23 @@
 <template>
   <div class="lottie-box" id="mushroom">
-    <div class="left">
-      <div class="menu">
-        <div class="panel-active">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" />
-          <p class="panel-active-border"></p>
-          <p >粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-        <p>
-          <a href="#mgtkc">
-            <span class="menu-nav-text">充电太空舱</span>
-            <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" class="mgtkc-active" />
-          </a>
-        </p>
-        <p>
-          <a href="#cdtkc">App</a>
-        </p>
-        <p>
-          <a href="#bzpj">包装与配件</a>
-        </p>
-      </div>
-    </div>
     <div class="content"></div>
     <div class="right">
       <div class="nav-bar">
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(0)" :class="{'zoomIn': activeIndex == 0}">
           <div class="text-panel">
             <p>通体透明硅胶包裹表面磨砂触感</p>
             <p>全机身密闭防水，使用后放心冲洗</p>
           </div>
           <a href="javascript:;" class="btn icon icon-mg-1"></a>
         </div>
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(1)" :class="{'zoomIn': activeIndex == 1}">
           <div class="text-panel">
             <p>掌心尺寸轻松调节强度</p>
             <p>可连接PinkPunch App邀请密友隔空互动</p>
           </div>
           <a href="javascript:;" class="btn icon icon-mg-2"></a>
         </div>
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(2)" :class="{'zoomIn': activeIndex == 2}">
           <div class="text-panel">
             <p>电量可以支撑使用1小时</p>
             <p>放回随身配备的太空舱随时随地补充电量</p>
@@ -59,14 +37,15 @@ export default {
   name: "MushRoom",
   data() {
     return {
-      lottie: {}
+      lottie: {},
+      activeIndex:-1
     };
   },
   mounted() {
     const width = document.getElementsByTagName("body")[0].clientWidth;
     const height = document.getElementsByTagName("body")[0].clientHeight;
-    bgMush.w = width;
-    bgMush.h = height;
+    bgMush.w = width / window.fontScale;
+    bgMush.h = height / window.fontScale;
     this.lottie = lottie.loadAnimation({
       container: document.getElementById("mushroom"),
       renderer: "svg",
@@ -74,73 +53,26 @@ export default {
       autoplay: true,
       animationData: bgMush
     });
-    let list = document.querySelectorAll('.text-panel p');
+    let list = document.querySelectorAll(".text-panel p");
     let len = list.length;
-    for(let i = 0; i < len; i++){
-      list[i].style.transform = `scale(${window.fontScale})`
+    for (let i = 0; i < len; i++) {
+      list[i].style.transform = `scale(${window.fontScale})`;
     }
-    // .forEach(item=>{
-    //   item.style.transform = `scale(${window.fontScale})`
-
-    // })
+  },
+  methods: {
+    handleEnter(val){
+      this.activeIndex = -1;
+      this.activeIndex = val;
+    }
   }
 };
 </script>
 <style lang="less">
+.lottie-box {
+  height: 100%;
+}
 #mushroom {
   background: #cc6677;
-}
-.left {
-  width: 2.39rem;
-  height: 100%;
-  position: absolute;
-  z-index: 3;
-  .menu {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    margin-left: 0.46rem;
-    height: 2.7rem;
-  }
-  .panel-active {
-    margin-top: 0.13rem;
-    p {
-      font-size: 0.156rem;
-      color: #fff;
-      cursor: default;
-      &:nth-child(1) {
-        font-size: 0.125rem;
-        letter-spacing: 0.146rem;
-      }
-    }
-    .panel-active-border {
-      width: 2.3rem;
-      height: 0;
-      border-top: 0.01rem solid #fff;
-      padding-top: 0.156rem;
-    }
-    img {
-      width: 2.56rem;
-      margin-left: -0.13rem;
-    }
-  }
-  p {
-    text-align: left;
-    font-family: "FYZYT";
-
-    a {
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.145rem;
-      margin-top: 0.13rem;
-      display: inline-block;
-      font-weight: 600;
-      &:hover {
-        color: #fff;
-      }
-    }
-  }
 }
 .content {
   width: 100%;
@@ -202,7 +134,16 @@ export default {
   }
 }
 .nav-btn {
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.05rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  // -webkit-animation-name: zoomOut;
+  // animation-name: zoomOut;
+  // &:hover {
+   
+  // }
   &:nth-child(1):hover {
     .text-panel {
       display: block;

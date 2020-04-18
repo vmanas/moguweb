@@ -1,26 +1,5 @@
 <template>
   <div class="lottie-box" id="bzpj">
-    <div class="left">
-      <div class="menu">
-        <p>
-          <a href="#mushroom">日落蘑菇</a>
-        </p>
-        <p>
-          <a href="#mgtkc">充电太空舱</a>
-        </p>
-        <p>
-          <a href="#cdtkc">App</a>
-        </p>
-        <div class="panel-active">
-          
-          <img src="../../assets/img/other/bzypj.png" alt="包装配件" />
-          <p class="panel-active-border"></p>
-          <p >太空舱&nbsp;充电线</p>
-          <p >PinkPunch&nbsp;纪念徽章</p>
-        </div>
-       
-      </div>
-    </div>
   </div>
 </template>
 <script >

@@ -1,35 +1,16 @@
 <template>
   <div class="lottie-box" id="mgtkc">
-    <div class="left">
-      <div class="menu">
-        <p>
-          <a href="#mushroom">日落蘑菇</a>
-        </p>
-        <div class="panel-active">
-          <p>蘑菇充电宝</p>
-          <img src="../../assets/img/other/mgtkc.png" alt="蘑菇太空舱" />
-          <p class="panel-active-border"></p>
-          <p >有我，就一定有电</p>
-        </div>
-        <p>
-          <a href="#cdtkc">App</a>
-        </p>
-        <p>
-          <a href="#bzpj">包装与配件</a>
-        </p>
-      </div>
-    </div>
     <div class="content"></div>
     <div class="right">
       <div class="nav-bar">
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(0)" :class="{'zoomIn': activeIndex == 0}">
           <div class="text-panel">
             <p>无线充电盒</p>
             <p>使用后将蘑菇放回太空舱自动开始充电</p>
           </div>
           <a href="javascript:;" class="btn icon icon-tkc-1"></a>
         </div>
-        <div class="nav-btn">
+        <div class="nav-btn" @mouseenter="handleEnter(1)" :class="{'zoomIn': activeIndex == 1}">
           <div class="text-panel">
             <p>蘑菇充电宝</p>
             <p>外出时太空舱内置电池可为蘑菇补足电量</p>
@@ -49,7 +30,8 @@ export default {
   name: "mgtkc",
   data() {
     return {
-      lottie: {}
+      lottie: {},
+      activeIndex:-1
     };
   },
   mounted() {
@@ -64,6 +46,12 @@ export default {
       autoplay: true,
       animationData: bgFlash
     });
+  },
+  methods:{
+    handleEnter(val){
+      this.activeIndex = -1;
+      this.activeIndex = val
+    }
   }
 };
 </script>
@@ -76,7 +64,7 @@ export default {
   background-size: 4.06rem 3.8rem;
 }
 .nav-btn {
-  &:nth-child(1):hover {
+  &:nth-child(1).zoomIn {
     .text-panel {
       display: block;
     }
@@ -88,7 +76,7 @@ export default {
       background-image: url("../../assets/img/icon/tkc-nav-1.png");
     }
   }
-  &:nth-child(2):hover {
+  &:nth-child(2).zoomIn {
     .text-panel {
       display: block;
     }

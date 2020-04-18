@@ -1,78 +1,23 @@
 <template>
   <div class="lottie-box" id="mushroom">
-    <div class="left">
-      <div class="menu">
-        <p @mouseover="handleOver('rlmg')" :class="{'hide':hoverIndex === 1 && tagIndex === 1}">
-          <a href="#mushroom">日落蘑菇</a>
-        </p>
-        <div  :class="{'panel animated zoomIn':hoverIndex === 1 && tagIndex !==1,'hide':hoverIndex!==1 || tagIndex ==1}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('rlmg')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 1 && hoverIndex === 1},{'hide': tagIndex !==1 || hoverIndex!==1 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-
-        <p @mouseover="handleOver('mgtkc')" :class="{'hide':hoverIndex === 2 || tagIndex === 2}">
-          <a href="#mgtkc">充电太空舱</a>
-        </p>
-        <div :class="{'panel animated zoomIn' :hoverIndex === 2 && tagIndex !==2,'hide':hoverIndex!==2 || tagIndex ==2}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('mgtkc')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 2 && hoverIndex === 2},{'hide': tagIndex !==2 || hoverIndex!==2 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-
-        <p @mouseover="handleOver('cdtkc')" :class="{'hide':hoverIndex === 3 || tagIndex === 3}">
-          <a href="#cdtkc">App</a>
-        </p>
-       <div :class="{'panel animated zoomIn':hoverIndex === 3 && tagIndex !==3,'hide':hoverIndex!==3 || tagIndex ==3}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('rlmg')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 3 && hoverIndex === 3},{'hide': tagIndex !==3 || hoverIndex!==3 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-
-        <p @mouseover="handleOver('bzpj')" :class="{'hide':hoverIndex === 4 || tagIndex === 4}">
-          <a href="#bzpj">包装与配件</a>
-        </p>
-        <div :class="{'panel animated zoomIn':hoverIndex === 4 && tagIndex !==4,'hide':hoverIndex!==4 || tagIndex ==4}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('rlmg')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 4 && hoverIndex === 4},{'hide': tagIndex !==4 || hoverIndex!==4 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-      </div>
-    </div>
     <div class="content"></div>
     <div class="right">
       <div class="nav-bar">
-        <div class="nav-btn" :class="{'animated zoomIn':navActive1,'animated zoomIn': navActiveOut1,}" @mouseenter="navOver(true,1)" @mouseleave="navOut(true,1)">
+        <div class="nav-btn" @mouseenter="handleEnter(0)" :class="{'zoomIn': activeIndex == 0}">
           <div class="text-panel">
             <p>通体透明硅胶包裹表面磨砂触感</p>
             <p>全机身密闭防水，使用后放心冲洗</p>
           </div>
-          <a href="javascript:;"  class="btn icon icon-mg-1" ></a>
+          <a href="javascript:;" class="btn icon icon-mg-1"></a>
         </div>
-        <div class="nav-btn" :class="{'animated zoomIn':navActive2,'animated zoomIn': navActiveOut3,}" @mouseenter="navOver(true,2)" @mouseleave="navOut(true,2)">
+        <div class="nav-btn" @mouseenter="handleEnter(1)" :class="{'zoomIn': activeIndex == 1}">
           <div class="text-panel">
             <p>掌心尺寸轻松调节强度</p>
             <p>可连接PinkPunch App邀请密友隔空互动</p>
           </div>
           <a href="javascript:;" class="btn icon icon-mg-2"></a>
         </div>
-        <div class="nav-btn" :class="{'animated zoomIn':navActive3,'animated zoomIn': navActiveOut3,}" @mouseenter="navOver(true,3)" @mouseleave="navOut(true,3)">
+        <div class="nav-btn" @mouseenter="handleEnter(2)" :class="{'zoomIn': activeIndex == 2}">
           <div class="text-panel">
             <p>电量可以支撑使用1小时</p>
             <p>放回随身配备的太空舱随时随地补充电量</p>
@@ -93,14 +38,7 @@ export default {
   data() {
     return {
       lottie: {},
-      tagIndex: 1,
-      hoverIndex: 1,
-      navActive1:false,
-      navActiveOut1:false,
-      navActiveOut2:false,
-      navActiveOut3:false,
-      navActive2:false,
-      navActive3:false
+      activeIndex:-1
     };
   },
   mounted() {
@@ -122,156 +60,19 @@ export default {
     }
   },
   methods: {
-    debounce(fn,wait){
-      var timer = null;
-      return function(){
-          if(timer !== null){
-              clearTimeout(timer);
-          }
-          timer = setTimeout(fn,wait);
-      }
-    },
-    navOut(val, index) {
-      let that = this
-      that.navActiveOut1 = false;
-      that.navActiveOut2 = false
-      that.navActiveOut3 = false
-      if(index === 1){
-        that.navActiveOut1 = val;
-      }
-      if(index === 2){
-        that.navActiveOut2 = val
-      }
-      if(index === 3){
-        that.navActiveOut3 = val
-      }
-
-    },
-    navOver(val,index){
-      let that = this
-      that.navActive1 = false;
-      that.navActive2 = false
-      that.navActive3 = false
-      if(index === 1){
-        that.navActive1 = val;
-      }
-      if(index === 2){
-        that.navActive2 = val
-      }
-      if(index === 3){
-        that.navActive3 = val
-      }
-    },
-    handleOver(val) {
-      switch (val) {
-        case "rlmg":
-          this.hoverIndex = 1;
-          break;
-        case "mgtkc":
-          this.hoverIndex = 2;
-          break;
-        case "cdtkc":
-          this.hoverIndex = 3;
-          break;
-        case "bzpj":
-          this.hoverIndex = 4;
-          break;
-      }
-    },
-    handleClick(val) {
-      switch (val) {
-        case "rlmg":
-          if (this.hoverIndex === 1) {
-            this.tagIndex = 1;
-          }
-
-          break;
-        case "mgtkc":
-          if (this.hoverIndex === 2) {
-            this.tagIndex = 2;
-          }
-          break;
-        case "cdtkc":
-          if (this.hoverIndex === 2) {
-            this.tagIndex = 2;
-          }
-          break;
-        case "bzpj":
-          if (this.hoverIndex === 2) {
-            this.tagIndex = 2;
-          }
-          break;
-      }
+    handleEnter(val){
+      this.activeIndex = -1;
+      this.activeIndex = val;
     }
   }
 };
 </script>
 <style lang="less">
+.lottie-box {
+  height: 100%;
+}
 #mushroom {
   background: #cc6677;
-}
-.hide{
-  display: none;
-}
-.left {
-  width: 2.39rem;
-  height: 100%;
-  position: absolute;
-  z-index: 3;
-  .menu {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    margin-left: 0.46rem;
-    height: 2.7rem;
-  }
-  .panel-active {
-    margin-top: 0.13rem;
-    display: block;
-    p {
-      font-size: 0.156rem;
-      color: #fff;
-      cursor: default;
-      &:nth-child(1) {
-        font-size: 0.125rem;
-        letter-spacing: 0.146rem;
-      }
-    }
-    .panel-active-border {
-      width: 2.3rem;
-      height: 0;
-      border-top: 0.01rem solid #fff;
-      padding-top: 0.156rem;
-    }
-    img {
-      width: 2.56rem;
-      margin-left: -0.13rem;
-    }
-  }
-  .panel{
-    display: block;
-    img {
-      width: 2.56rem;
-      margin-left: -0.13rem;
-    }
-  }
-  p {
-    text-align: left;
-    font-family: "FYZYT";
-
-    a {
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.145rem;
-      margin-top: 0.13rem;
-      display: inline-block;
-      font-weight: 600;
-      &:hover {
-        color: #fff;
-      }
-    }
-  }
 }
 .content {
   width: 100%;
@@ -333,8 +134,12 @@ export default {
   }
 }
 .nav-btn {
-  margin-bottom: 0.1rem;
-  &:nth-child(1):hover {
+  margin-bottom: 0.05rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  &:nth-child(1).zoomIn {
     .text-panel {
       display: block;
     }
@@ -347,7 +152,7 @@ export default {
       background-size: 0.98rem 0.98rem;
     }
   }
-  &:nth-child(2):hover {
+  &:nth-child(2).zoomIn {
     .text-panel {
       display: block;
     }
@@ -360,7 +165,7 @@ export default {
       background-size: 0.98rem 0.98rem;
     }
   }
-  &:nth-child(3):hover {
+  &:nth-child(3).zoomIn {
     .text-panel {
       display: block;
     }
