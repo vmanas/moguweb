@@ -6,7 +6,7 @@
     >
       <div class="menu-item" @mouseenter="handleMouse(0)">
         <p
-          :class="['title-hide',{'title':activeIndex!=0 || hoverIndex !=0 || (activeIndex == 0 && hoverIndex!=0)}]"
+          :class="['title-hide',{'title':hoverIndex!=0}]"
         >日落蘑菇</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 0 && hoverIndex == 0,'panel-hover':hoverIndex == 0 && activeIndex !=0}]"
@@ -20,7 +20,7 @@
 
       <div class="menu-item" @mouseenter="handleMouse(1)">
         <p
-          :class="['title-hide',{'title':activeIndex!=1 || hoverIndex !=1 || (activeIndex == 1 && hoverIndex!=1)}]"
+          :class="['title-hide',{'title':hoverIndex!=1}]"
         >充电太空舱</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 1 && hoverIndex == 1,'panel-hover':hoverIndex == 1 && activeIndex !=1}]"
@@ -34,7 +34,7 @@
 
       <div class="menu-item" @mouseenter="handleMouse(2)">
         <p
-          :class="['title-hide',{'title':activeIndex!=2 || hoverIndex !=2 || (activeIndex == 2 && hoverIndex!=2)}]"
+          :class="['title-hide',{'title':hoverIndex!=2}]"
         >APP</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 2 && hoverIndex == 2,'panel-hover':hoverIndex == 2 && activeIndex !=2}]"
@@ -47,7 +47,7 @@
 
       <div class="menu-item" @mouseenter="handleMouse(3)">
         <p
-          :class="['title-hide',{'title':activeIndex!=3 || hoverIndex !=3 || (activeIndex == 3 && hoverIndex!=3)}]"
+          :class="['title-hide',{'title':hoverIndex!=3}]"
         >包装与配件</p>
         <div
           :class="['panel',{'panel-active':activeIndex == 3 && hoverIndex == 3,'panel-hover':hoverIndex == 3 && activeIndex !=3}]"
