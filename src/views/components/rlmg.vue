@@ -118,7 +118,7 @@ export default {
     position: absolute;
     right: 0.8rem;
     top: 0.2rem;
-    display: none;
+    opacity: 0;
     p {
       color: #fff;
       text-align: right;
@@ -135,13 +135,19 @@ export default {
 }
 .nav-btn {
   margin-bottom: 0.05rem;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   &:nth-child(1).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 300ms ;
+      transition-delay: 400ms;
+      -moz-transition-delay: 400ms; /* Firefox 4 */
+      -webkit-transition-delay: 400ms; /* Safari 和 Chrome */
+      -o-transition-delay: 400ms; /* Opera */
     }
     .icon-mg-1 {
       width: 0.98rem;
@@ -155,6 +161,12 @@ export default {
   &:nth-child(2).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-mg-2 {
       width: 0.98rem;
@@ -168,6 +180,12 @@ export default {
   &:nth-child(3).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-mg-3 {
       width: 0.98rem;

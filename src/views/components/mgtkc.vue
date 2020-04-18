@@ -67,6 +67,12 @@ export default {
   &:nth-child(1).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-tkc-1{
       width: 0.98rem;
@@ -79,6 +85,12 @@ export default {
   &:nth-child(2).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-tkc-2 {
       width: 0.98rem;

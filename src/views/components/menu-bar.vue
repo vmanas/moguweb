@@ -6,10 +6,10 @@
     >
       <div class="menu-item" @mouseenter="handleMouse(0)">
         <p
-          :class="['title-hide',{'title':hoverIndex!=0}]"
+          :class="['title-hide',{'title':activeIndex != 0 && hoverIndex!=0}]"
         >日落蘑菇</p>
         <div
-          :class="['panel',{'panel-active':activeIndex == 0 && hoverIndex == 0,'panel-hover':hoverIndex == 0 && activeIndex !=0}]"
+          :class="['panel',{'panel-active':activeIndex == 0,'panel-hover':hoverIndex == 0 && activeIndex !=0}]"
         >
           <p class="text-space">跳蛋玩具</p>
           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick(0)" />
@@ -20,10 +20,10 @@
 
       <div class="menu-item" @mouseenter="handleMouse(1)">
         <p
-          :class="['title-hide',{'title':hoverIndex!=1}]"
+          :class="['title-hide',{'title':activeIndex!=1 &&hoverIndex!=1}]"
         >充电太空舱</p>
         <div
-          :class="['panel',{'panel-active':activeIndex == 1 && hoverIndex == 1,'panel-hover':hoverIndex == 1 && activeIndex !=1}]"
+          :class="['panel',{'panel-active':activeIndex == 1,'panel-hover':hoverIndex == 1 && activeIndex !=1}]"
         >
           <p class="text-space">蘑菇充电宝</p>
           <img src="../../assets/img/other/mgtkc.png" alt="蘑菇太空舱" @click="handleClick(1)" />
@@ -34,10 +34,10 @@
 
       <div class="menu-item" @mouseenter="handleMouse(2)">
         <p
-          :class="['title-hide',{'title':hoverIndex!=2}]"
+          :class="['title-hide',{'title':activeIndex!=2 && hoverIndex!=2}]"
         >APP</p>
         <div
-          :class="['panel',{'panel-active':activeIndex == 2 && hoverIndex == 2,'panel-hover':hoverIndex == 2 && activeIndex !=2}]"
+          :class="['panel',{'panel-active':activeIndex == 2 ,'panel-hover':hoverIndex == 2 && activeIndex !=2}]"
         >
           <img src="../../assets/img/other/app.png" alt="app" @click="handleClick(2)" />
           <p class="panel-active-border"></p>
@@ -47,10 +47,10 @@
 
       <div class="menu-item" @mouseenter="handleMouse(3)">
         <p
-          :class="['title-hide',{'title':hoverIndex!=3}]"
+          :class="['title-hide',{'title':activeIndex !=3 &&hoverIndex!=3}]"
         >包装与配件</p>
         <div
-          :class="['panel',{'panel-active':activeIndex == 3 && hoverIndex == 3,'panel-hover':hoverIndex == 3 && activeIndex !=3}]"
+          :class="['panel',{'panel-active':activeIndex == 3,'panel-hover':hoverIndex == 3 && activeIndex !=3}]"
         >
           <img src="../../assets/img/other/bzypj.png" alt="配件" @click="handleClick(3)" />
           <p class="panel-active-border"></p>
@@ -112,24 +112,25 @@ export default {
       font-size: 0.156rem;
       color: #fff;
       cursor: default;
+      clear: both;
     }
   }
 
   .panel {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     display: none;
+    position: relative;
     img {
       width: 2.56rem;
       margin-left: -0.13rem;
+      float: left;
       cursor: pointer;
     }
     &.panel-active {
       display: block;
-      -webkit-animation-name: fadeIn;
-      animation-name: fadeIn;
       p.text-space {
         font-size: 0.125rem;
         letter-spacing: 0.146rem;
@@ -144,8 +145,6 @@ export default {
     }
     &.panel-hover {
       display: block;
-      -webkit-animation-name: fadeIn;
-      animation-name: fadeIn;
       p {
         display: none;
       }
@@ -160,6 +159,9 @@ export default {
     &.title {
       display: block;
     }
+  }
+  .menu .menu-item{
+    clear: both;
   }
   .menu .menu-item:nth-child(2) .panel-active {
    margin-top: 0.13rem;

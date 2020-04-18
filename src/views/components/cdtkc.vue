@@ -72,14 +72,20 @@ export default {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: url('../../assets/img/other/cdtkc-1.png') no-repeat center left,
-            url('../../assets/img/other/cdtkc-2.png') no-repeat center right;
+  background: url('../../assets/img/other/01.gif') no-repeat center left,
+            url('../../assets/img/other/02.gif') no-repeat center right;
   background-size: 1.79rem 3.64rem;
 }
 .nav-btn {
   &:nth-child(1).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-cdtkc-1{
       width: 0.98rem;
@@ -92,6 +98,12 @@ export default {
   &:nth-child(2).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-cdtkc-2 {
       width: 0.98rem;
@@ -104,6 +116,12 @@ export default {
   &:nth-child(3).zoomIn {
     .text-panel {
       display: block;
+      opacity: 1;
+      transition: opacity 200ms ;
+      transition-delay: 500ms;
+      -moz-transition-delay: 500ms; /* Firefox 4 */
+      -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
+      -o-transition-delay: 500ms; /* Opera */
     }
     .icon-cdtkc-3 {
       width: 0.98rem;
