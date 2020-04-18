@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       lottie: {},
-      activeIndex:-1
+      activeIndex: -1
     };
   },
   mounted() {
@@ -60,7 +60,7 @@ export default {
     }
   },
   methods: {
-    handleEnter(val){
+    handleEnter(val) {
       this.activeIndex = -1;
       this.activeIndex = val;
     }
@@ -118,6 +118,7 @@ export default {
     position: absolute;
     right: 0.8rem;
     top: 0.2rem;
+    visibility: hidden;
     opacity: 0;
     p {
       color: #fff;
@@ -141,9 +142,9 @@ export default {
   animation-fill-mode: both;
   &:nth-child(1).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 300ms ;
+      transition: opacity 300ms;
       transition-delay: 400ms;
       -moz-transition-delay: 400ms; /* Firefox 4 */
       -webkit-transition-delay: 400ms; /* Safari 和 Chrome */
@@ -160,9 +161,9 @@ export default {
   }
   &:nth-child(2).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
@@ -179,9 +180,9 @@ export default {
   }
   &:nth-child(3).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */

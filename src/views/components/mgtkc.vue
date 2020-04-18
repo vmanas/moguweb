@@ -31,14 +31,14 @@ export default {
   data() {
     return {
       lottie: {},
-      activeIndex:-1
+      activeIndex: -1
     };
   },
   mounted() {
     const width = document.getElementsByTagName("body")[0].clientWidth;
     const height = document.getElementsByTagName("body")[0].clientHeight;
-    bgFlash.w = width/window.fontScale;
-    bgFlash.h = height/window.fontScale ;
+    bgFlash.w = width / window.fontScale;
+    bgFlash.h = height / window.fontScale;
     this.lottie = lottie.loadAnimation({
       container: document.getElementById("mgtkc"),
       renderer: "svg",
@@ -47,10 +47,10 @@ export default {
       animationData: bgFlash
     });
   },
-  methods:{
-    handleEnter(val){
+  methods: {
+    handleEnter(val) {
       this.activeIndex = -1;
-      this.activeIndex = val
+      this.activeIndex = val;
     }
   }
 };
@@ -59,22 +59,22 @@ export default {
 #mgtkc {
   background: #ffcc99;
 }
-.content{
-  background-image: url('../../assets/img/other/tkc.png');
+.content {
+  background-image: url("../../assets/img/other/tkc.png");
   background-size: 4.06rem 3.8rem;
 }
 .nav-btn {
   &:nth-child(1).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
       -o-transition-delay: 500ms; /* Opera */
     }
-    .icon-tkc-1{
+    .icon-tkc-1 {
       width: 0.98rem;
       height: 0.98rem;
       margin-top: -0.205rem;
@@ -84,9 +84,9 @@ export default {
   }
   &:nth-child(2).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */

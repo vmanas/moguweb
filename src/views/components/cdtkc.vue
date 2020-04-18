@@ -1,6 +1,5 @@
 <template>
   <div class="lottie-box" id="cdtkc">
-   
     <div class="content"></div>
     <div class="right">
       <div class="nav-bar" @mouseleave="()=>{this.activeIndex=-1}">
@@ -18,7 +17,7 @@
           </div>
           <a href="javascript:;" class="btn icon icon-cdtkc-2"></a>
         </div>
-         <div class="nav-btn" @mouseenter="handleEnter(2)" :class="{'zoomIn': activeIndex == 2}">
+        <div class="nav-btn" @mouseenter="handleEnter(2)" :class="{'zoomIn': activeIndex == 2}">
           <div class="text-panel">
             <p>邀听见对方声音</p>
             <p>远程互动中可进行语音和文字聊天</p>
@@ -39,12 +38,12 @@ export default {
   data() {
     return {
       lottie: {},
-      activeIndex:-1
+      activeIndex: -1
     };
   },
   mounted() {
-    const width = document.getElementsByTagName('body')[0].clientWidth;
-    const height = document.getElementsByTagName('body')[0].clientHeight;
+    const width = document.getElementsByTagName("body")[0].clientWidth;
+    const height = document.getElementsByTagName("body")[0].clientHeight;
     bgCloud.w = width;
     bgCloud.h = height;
     this.lottie = lottie.loadAnimation({
@@ -55,8 +54,8 @@ export default {
       animationData: bgCloud
     });
   },
-  methods:{
-    handleEnter(val){
+  methods: {
+    handleEnter(val) {
       this.activeIndex = -1;
       this.activeIndex = val;
     }
@@ -67,27 +66,30 @@ export default {
 #cdtkc {
   background: #000000;
 }
-.content{
+.content {
   width: 4rem;
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: url('../../assets/img/other/01.gif') no-repeat center left,
-            url('../../assets/img/other/02.gif') no-repeat center right;
+  background: 
+  // url("../../assets/img/other/01.gif") no-repeat center left, url("../../assets/img/other/cdtkc-1.png")
+      no-repeat center left,
+    // url("../../assets/img/other/02.gif") no-repeat center right,
+      url("../../assets/img/other/cdtkc-2.png") no-repeat center right;
   background-size: 1.79rem 3.64rem;
 }
 .nav-btn {
   &:nth-child(1).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
       -o-transition-delay: 500ms; /* Opera */
     }
-    .icon-cdtkc-1{
+    .icon-cdtkc-1 {
       width: 0.98rem;
       height: 0.98rem;
       margin-top: -0.205rem;
@@ -97,9 +99,9 @@ export default {
   }
   &:nth-child(2).zoomIn {
     .text-panel {
-      display: block;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
@@ -108,7 +110,7 @@ export default {
     .icon-cdtkc-2 {
       width: 0.98rem;
       height: 0.98rem;
-       margin-top: -0.205rem;
+      margin-top: -0.205rem;
       margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/cdtkc-nav-2.png");
     }
@@ -117,7 +119,7 @@ export default {
     .text-panel {
       display: block;
       opacity: 1;
-      transition: opacity 200ms ;
+      transition: opacity 200ms;
       transition-delay: 500ms;
       -moz-transition-delay: 500ms; /* Firefox 4 */
       -webkit-transition-delay: 500ms; /* Safari 和 Chrome */
@@ -126,7 +128,7 @@ export default {
     .icon-cdtkc-3 {
       width: 0.98rem;
       height: 0.98rem;
-       margin-top: -0.205rem;
+      margin-top: -0.205rem;
       margin-left: -0.205rem;
       background-image: url("../../assets/img/icon/cdtkc-nav-3.png");
     }
