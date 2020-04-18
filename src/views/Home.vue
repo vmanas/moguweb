@@ -3,7 +3,7 @@
     <img src="../assets/img/other/logo.png" alt="logo" class="logo" />
     <a href="javascript:;" class="shop-btn icon icon-shop"></a>
     <menu-bar :currentIndex="currentIndex" @setActive="toSlide"></menu-bar>
-    <swiper :options="swiperOption" ref="mySwiper" @slideChange="slideChange">
+    <swiper :options="swiperOption" ref="mySwiper" @sliderMove="slideChange">
       <!-- slides -->
       <swiper-slide>
         <mush-room></mush-room>
@@ -45,11 +45,10 @@ export default {
   },
   methods:{
     slideChange(){
-      this.currentIndex = this.$refs.mySwiper.swiperInstance.activeIndex
-
+      this.currentIndex = this.$refs.mySwiper.swiperInstance.activeIndex;
     },
     toSlide(index){
-      this.$refs.mySwiper.swiperInstance.slideTo(index, 1000, false)
+      this.$refs.mySwiper.swiperInstance.slideTo(index, 1000, false);
     }
   }
 };
