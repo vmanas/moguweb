@@ -2,57 +2,24 @@
   <div class="lottie-box" id="mushroom">
     <div class="left">
       <div class="menu">
-        <p @mouseover="handleOver('rlmg')" :class="{'hide':hoverIndex === 1 && tagIndex === 1}">
-          <a href="#mushroom">日落蘑菇</a>
-        </p>
-        <div  :class="{'panel animated zoomIn':hoverIndex === 1 && tagIndex !==1,'hide':hoverIndex!==1 || tagIndex ==1}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('rlmg')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 1 && hoverIndex === 1},{'hide': tagIndex !==1 || hoverIndex!==1 }]">
+        <div class="panel-active">
           <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
+          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" />
           <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
+          <p >粉嫩剔透，柔软外表内含充沛能量</p>
         </div>
-
-        <p @mouseover="handleOver('mgtkc')" :class="{'hide':hoverIndex === 2 || tagIndex === 2}">
-          <a href="#mgtkc">充电太空舱</a>
+        <p>
+          <a href="#mgtkc">
+            <span class="menu-nav-text">充电太空舱</span>
+            <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" class="mgtkc-active" />
+          </a>
         </p>
-        <div :class="{'panel animated zoomIn' :hoverIndex === 2 && tagIndex !==2,'hide':hoverIndex!==2 || tagIndex ==2}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('mgtkc')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 2 && hoverIndex === 2},{'hide': tagIndex !==2 || hoverIndex!==2 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-
-        <p @mouseover="handleOver('cdtkc')" :class="{'hide':hoverIndex === 3 || tagIndex === 3}">
+        <p>
           <a href="#cdtkc">App</a>
         </p>
-       <div :class="{'panel animated zoomIn':hoverIndex === 3 && tagIndex !==3,'hide':hoverIndex!==3 || tagIndex ==3}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('rlmg')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 3 && hoverIndex === 3},{'hide': tagIndex !==3 || hoverIndex!==3 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
-
-        <p @mouseover="handleOver('bzpj')" :class="{'hide':hoverIndex === 4 || tagIndex === 4}">
+        <p>
           <a href="#bzpj">包装与配件</a>
         </p>
-        <div :class="{'panel animated zoomIn':hoverIndex === 4 && tagIndex !==4,'hide':hoverIndex!==4 || tagIndex ==4}">
-           <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇" @click="handleClick('rlmg')" />
-        </div>
-        <div :class="[{'panel-active animated zoomIn':tagIndex === 4 && hoverIndex === 4},{'hide': tagIndex !==4 || hoverIndex!==4 }]">
-          <p>跳蛋玩具</p>
-          <img src="../../assets/img/other/rlmg.png" alt="日落蘑菇"/>
-          <p class="panel-active-border"></p>
-          <p>粉嫩剔透，柔软外表内含充沛能量</p>
-        </div>
       </div>
     </div>
     <div class="content"></div>
@@ -92,16 +59,14 @@ export default {
   name: "MushRoom",
   data() {
     return {
-      lottie: {},
-      tagIndex: 1,
-      hoverIndex: 1,
+      lottie: {}
     };
   },
   mounted() {
     const width = document.getElementsByTagName("body")[0].clientWidth;
     const height = document.getElementsByTagName("body")[0].clientHeight;
-    bgMush.w = width / window.fontScale;
-    bgMush.h = height / window.fontScale;
+    bgMush.w = width;
+    bgMush.h = height;
     this.lottie = lottie.loadAnimation({
       container: document.getElementById("mushroom"),
       renderer: "svg",
@@ -109,63 +74,21 @@ export default {
       autoplay: true,
       animationData: bgMush
     });
-    let list = document.querySelectorAll(".text-panel p");
+    let list = document.querySelectorAll('.text-panel p');
     let len = list.length;
-    for (let i = 0; i < len; i++) {
-      list[i].style.transform = `scale(${window.fontScale})`;
+    for(let i = 0; i < len; i++){
+      list[i].style.transform = `scale(${window.fontScale})`
     }
-  },
-  methods: {
-    handleOver(val) {
-      switch (val) {
-        case "rlmg":
-          this.hoverIndex = 1;
-          break;
-        case "mgtkc":
-          this.hoverIndex = 2;
-          break;
-        case "cdtkc":
-          this.hoverIndex = 3;
-          break;
-        case "bzpj":
-          this.hoverIndex = 4;
-          break;
-      }
-    },
-    handleClick(val) {
-      switch (val) {
-        case "rlmg":
-          if (this.hoverIndex === 1) {
-            this.tagIndex = 1;
-          }
+    // .forEach(item=>{
+    //   item.style.transform = `scale(${window.fontScale})`
 
-          break;
-        case "mgtkc":
-          if (this.hoverIndex === 2) {
-            this.tagIndex = 2;
-          }
-          break;
-        case "cdtkc":
-          if (this.hoverIndex === 2) {
-            this.tagIndex = 2;
-          }
-          break;
-        case "bzpj":
-          if (this.hoverIndex === 2) {
-            this.tagIndex = 2;
-          }
-          break;
-      }
-    }
+    // })
   }
 };
 </script>
 <style lang="less">
 #mushroom {
   background: #cc6677;
-}
-.hide{
-  display: none;
 }
 .left {
   width: 2.39rem;
@@ -182,7 +105,6 @@ export default {
   }
   .panel-active {
     margin-top: 0.13rem;
-    display: block;
     p {
       font-size: 0.156rem;
       color: #fff;
@@ -198,13 +120,6 @@ export default {
       border-top: 0.01rem solid #fff;
       padding-top: 0.156rem;
     }
-    img {
-      width: 2.56rem;
-      margin-left: -0.13rem;
-    }
-  }
-  .panel{
-    display: block;
     img {
       width: 2.56rem;
       margin-left: -0.13rem;

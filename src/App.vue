@@ -14,6 +14,7 @@ body,
   width: 100%;
   height: 100%;
   /* font-size: 12px; */
+  /* overflow: hidden; */
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

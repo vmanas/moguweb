@@ -55,8 +55,8 @@ export default {
   mounted() {
     const width = document.getElementsByTagName("body")[0].clientWidth;
     const height = document.getElementsByTagName("body")[0].clientHeight;
-    bgFlash.w = width;
-    bgFlash.h = height;
+    bgFlash.w = width/window.fontScale;
+    bgFlash.h = height/window.fontScale ;
     this.lottie = lottie.loadAnimation({
       container: document.getElementById("mgtkc"),
       renderer: "svg",

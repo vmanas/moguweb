@@ -26,6 +26,8 @@ export default {
     top: 0.177rem;
     left: 0.854rem;
     z-index:9;
+    width: 0.66rem;
+    height: 0.36rem;
 }
 
 .home,.lottie-box{
