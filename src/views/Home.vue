@@ -45,7 +45,6 @@ export default {
   },
   methods:{
     slideChange(){
-      console.log("Asd")
       this.currentIndex = this.$refs.mySwiper.swiperInstance.activeIndex;
     },
     toSlide(index){

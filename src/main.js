@@ -6,7 +6,7 @@ import '../src/assets/css/animate.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // require styles
-import 'swiper/css/swiper.css'
+import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 new Vue({

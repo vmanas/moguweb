@@ -78,7 +78,6 @@ export default {
     currentIndex(val) {
       this.activeIndex = val;
       this.hoverIndex = val;
-      console.log(this.activeIndex);
     }
   },
   methods: {
@@ -125,6 +124,7 @@ export default {
     img {
       width: 2.56rem;
       margin-left: -0.13rem;
+      cursor: pointer;
     }
     &.panel-active {
       display: block;
