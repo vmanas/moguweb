@@ -58,21 +58,21 @@
     <div class="content"></div>
     <div class="right">
       <div class="nav-bar">
-        <div class="nav-btn" :class="{'animated zoomIn':navActive}" @mouseenter="navOver(true)" @mouseleave="navOver(false)">
+        <div class="nav-btn" :class="{'animated zoomIn':navActive == 1}" @mouseenter="navOver(true,1)" @mouseleave="navOver(false)">
           <div class="text-panel">
             <p>通体透明硅胶包裹表面磨砂触感</p>
             <p>全机身密闭防水，使用后放心冲洗</p>
           </div>
           <a href="javascript:;"  class="btn icon icon-mg-1" ></a>
         </div>
-        <div class="nav-btn" :class="{'animated zoomIn':navActive}" @mouseenter="navOver(true)" @mouseleave="navOver(false)">
+        <div class="nav-btn" :class="{'animated zoomIn':navActive == 2}" @mouseenter="navOver(true,2)" @mouseleave="navOver(false)">
           <div class="text-panel">
             <p>掌心尺寸轻松调节强度</p>
             <p>可连接PinkPunch App邀请密友隔空互动</p>
           </div>
           <a href="javascript:;" class="btn icon icon-mg-2"></a>
         </div>
-        <div class="nav-btn" :class="{'animated zoomIn':navActive}" @mouseenter="navOver(true)" @mouseleave="navOver(false)">
+        <div class="nav-btn" :class="{'animated zoomIn':navActive == 3}" @mouseenter="navOver(true,3)" @mouseleave="navOver(false)">
           <div class="text-panel">
             <p>电量可以支撑使用1小时</p>
             <p>放回随身配备的太空舱随时随地补充电量</p>
@@ -95,7 +95,7 @@ export default {
       lottie: {},
       tagIndex: 1,
       hoverIndex: 1,
-      navActive:false
+      navActive:0
     };
   },
   mounted() {
@@ -117,8 +117,13 @@ export default {
     }
   },
   methods: {
-    navOver(val){
-      this.navActive = val;
+    navOver(val,num){
+      if(val){
+        this.navActive = num;
+      }else{
+        this.navActive = 0;
+      }
+      
     },
     handleOver(val) {
       switch (val) {
